@@ -74,12 +74,12 @@ if "generated_figures" not in st.session_state:
     st.session_state.generated_figures = []
 
 # === Sidebar Navigation ===
-# st.sidebar.title("📁 Navigation")
+# st.sidebar.title("Mainmanu")
 # section = st.sidebar.radio("Go to", ["Upload & Preview", "Summary & Filter", "Visualizations", "Export Report"])
 
 with st.sidebar:
     section = option_menu(
-        "Main_Manu", 
+        "MainManu", 
         ["Upload & Preview", "Summary & Filter", "Visualizations", "Export Report"],
         icons=["cloud-upload", "funnel", "bar-chart", "file-earmark-pdf"], 
         menu_icon="cast", 
@@ -87,11 +87,11 @@ with st.sidebar:
         styles={
             "container": {
                 "padding": "10px",
-                "background-color": "#f8f9fa",  # light background
+                "background-color": "#f8f9fa",
                 "border-radius": "8px"
             },
             "icon": {
-                "color": "#0d6efd",  # Bootstrap primary blue
+                "color": "#0d6efd",
                 "font-size": "18px"
             },
             "nav-link": {
@@ -157,7 +157,7 @@ elif section == "Summary & Filter":
         st.subheader("📈 Data Summary")
         st.write(df.describe())
 
-        st.markdown("### 🔍 Filter Data (Optional)")
+        st.markdown("### 🔍 Filter Data")
         filters = {}
         for col in df.select_dtypes(include='object').columns:
             options = df[col].unique().tolist()
